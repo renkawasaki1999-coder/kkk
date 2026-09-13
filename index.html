@@ -48,7 +48,7 @@
     .logo {
       font-size: 1.5rem;
       font-weight: bold;
-      color: #0077b6;
+      color: color: color: color: #496b68;
       display: flex;
       align-items: center;
       gap: 0.5rem;
@@ -63,10 +63,10 @@
       transition: color 0.3s;
     }
     .nav-links a:hover {
-      color: #0077b6;
+      color: color: color: color: color: #496b68;      
     }
     .btn-reserve {
-      background-color: #0077b6;
+      background-color: color: color: color: color: #496b68;  
       color: #ffffff !important;
       padding: 0.6rem 1.2rem;
       border-radius: 50px;
@@ -107,7 +107,7 @@
       flex-wrap: wrap;
     }
     .btn-primary {
-      background-color: #0077b6;
+      background-color: color: color: color: color: #496b68;
       color: #fff;
       padding: 0.8rem 2rem;
       border-radius: 30px;
@@ -116,7 +116,7 @@
     }
     .btn-secondary {
       background-color: #ffffff;
-      color: #0077b6;
+      color: color: color: color: color: #496b68;
       border: 2px solid #0077b6;
       padding: 0.8rem 2rem;
       border-radius: 30px;
@@ -143,7 +143,7 @@
       display: block;
       width: 50px;
       height: 3px;
-      background-color: #0077b6;
+      background-color: color: color: color: color: #496b68;
       margin: 0.5rem auto 0;
       border-radius: 2px;
     }
@@ -162,6 +162,120 @@
       object-fit: cover;
       border-radius: 50%;
     }
+
+    /* --------------------------------------
+   医療設備
+-------------------------------------- */
+.equipment-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.equipment-card {
+  background-color: #ffffff;
+  padding: 28px;
+  border-radius: 14px;
+  border: 1px solid #e6e6e6;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+}
+
+.equipment-card h3 {
+  color: color: color: color: color: #496b68;
+  margin-bottom: 12px;
+}
+
+/* --------------------------------------
+   診療時間
+-------------------------------------- */
+.hours-table-wrap {
+  overflow-x: auto;
+}
+
+.hours-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+}
+
+.hours-table th,
+.hours-table td {
+  border: 1px solid #dddddd;
+  padding: 14px;
+  text-align: center;
+}
+
+.hours-table th {
+  background-color: #eef4f2;
+  color: #3f5f5c;
+}
+
+.hours-note {
+  margin-top: 12px;
+  font-size: 0.9rem;
+  color: #666666;
+}
+
+/* --------------------------------------
+   駐車場
+-------------------------------------- */
+.parking-box {
+  background-color: #f7f9f8;
+  padding: 32px;
+  border-radius: 16px;
+}
+
+.parking-box h3 {
+  color: #3f5f5c;
+  margin-bottom: 16px;
+}
+
+.parking-highlight {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.map-placeholder {
+  margin-top: 24px;
+  height: 260px;
+  background-color: #e9eeee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  color: #666666;
+}
+
+/* --------------------------------------
+   スマホ対応
+-------------------------------------- */
+@media (max-width: 768px) {
+
+  .doctor {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .equipment-grid {
+    grid-template-columns: 1fr;
+  }
+
+  section {
+    padding: 3rem 1rem;
+  }
+
+  .parking-box {
+    padding: 22px;
+  }
+
+  .hours-table th,
+  .hours-table td {
+    padding: 10px 6px;
+    font-size: 0.85rem;
+  }
+}
+
 
 
     /* --------------------------------------
@@ -209,7 +323,7 @@
       box-shadow: 0 10px 20px rgba(0,0,0,0.08);
     }
     .service-card h3 {
-      color: #0077b6;
+      color: color: color: color: color: #496b68;
       margin-bottom: 0.5rem;
     }
 
@@ -244,7 +358,7 @@
     }
     .btn-submit {
       width: 100%;
-      background-color: #0077b6;
+      background-color: color: color: color: color: #496b68;
       color: #fff;
       border: none;
       padding: 1rem;
@@ -279,7 +393,7 @@
       text-align: left;
     }
     .info-table th {
-      color: #0077b6;
+      color: color: color: color: color: #496b68;
       width: 30%;
     }
 
@@ -343,13 +457,107 @@
   <div>
     <h2>院長紹介</h2>
     <h3>藤井 俊介（昭和59年生まれ）</h3>
-    <h4>経歴  京都大学医学部卒</h4>
+    <h4>経歴  福岡大学医学部卒</h4>
     <p>
       地域の皆さまに安心して通っていただける歯科医院を目指し、
       丁寧で分かりやすい診療を心がけています。
     </p>
   </div>
 </section>
+
+  <!-- 医療設備 -->
+<section id="equipment">
+  <h2 class="section-title">精度の高い治療のための設備</h2>
+
+  <div class="equipment-grid">
+    <div class="equipment-card">
+      <h3>歯科用CT</h3>
+      <p>
+        歯や顎の状態を立体的に確認できる歯科用CTを導入しています。
+        より正確な診断を行い、安全性に配慮した治療につなげます。
+      </p>
+    </div>
+
+    <div class="equipment-card">
+      <h3>マイクロスコープ</h3>
+      <p>
+        肉眼では確認しにくい細かな部分まで拡大して確認できる設備です。
+        精密な治療を行うために活用しています。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- 診療時間 -->
+<section id="hours">
+  <h2 class="section-title">診療時間</h2>
+
+  <div class="hours-table-wrap">
+    <table class="hours-table">
+      <tr>
+        <th>時間</th>
+        <th>月</th>
+        <th>火</th>
+        <th>水</th>
+        <th>木</th>
+        <th>金</th>
+        <th>土</th>
+        <th>日</th>
+      </tr>
+
+      <tr>
+        <td>9:30〜13:00</td>
+        <td>○</td>
+        <td>○</td>
+        <td>休</td>
+        <td>○</td>
+        <td>○</td>
+        <td>○</td>
+        <td>休</td>
+      </tr>
+
+      <tr>
+        <td>14:30〜19:00</td>
+        <td>○</td>
+        <td>○</td>
+        <td>休</td>
+        <td>○</td>
+        <td>○</td>
+        <td>△</td>
+        <td>休</td>
+      </tr>
+    </table>
+
+    <p class="hours-note">
+      ※土曜日の午後は17:00まで<br>
+      ※祝日は休診です
+    </p>
+  </div>
+</section>
+
+<!-- 提携駐車場 -->
+<section id="parking">
+  <h2 class="section-title">アクセス・提携駐車場</h2>
+
+  <div class="parking-box">
+    <h3>🚗 提携コインパーキングをご利用いただけます</h3>
+
+    <p class="parking-highlight">
+      ご来院の患者さまに30分無料券をお渡ししています。
+    </p>
+
+    <p>
+      駐車後、駐車証明書を受付までお持ちください。
+      場所が分からない場合は、下記の地図をご確認ください。
+    </p>
+
+    <div class="map-placeholder">
+      ここにGoogleマップを表示
+    </div>
+  </div>
+</section>
+
+
 
   <!-- 特徴 -->
   <section id="features">
