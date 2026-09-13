@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>さくら台歯科・矯正歯科 | 公式サイト</title>
+  <style>
+    /* --------------------------------------
+       基本スタイル & リセット
+    -------------------------------------- */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+      color: #333333;
+      background-color: #fcfdfe;
+      line-height: 1.6;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    ul {
+      list-style: none;
+    }
+
+    /* --------------------------------------
+       ヘッダー & ナビゲーション
+    -------------------------------------- */
+    header {
+      position: sticky;
+      top: 0;
+      background-color: #ffffff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      z-index: 1000;
+    }
+    .header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #0077b6;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+    }
+    .nav-links a {
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover {
+      color: #0077b6;
+    }
+    .btn-reserve {
+      background-color: #0077b6;
+      color: #ffffff !important;
+      padding: 0.6rem 1.2rem;
+      border-radius: 50px;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+    .btn-reserve:hover {
+      background-color: #005f92;
+    }
+
+    /* --------------------------------------
+       ヒーローセクション
+    -------------------------------------- */
+    .hero {
+      background: linear-gradient(135deg, #e0f2fe 0%, #ffffff 100%);
+      padding: 5rem 2rem;
+      text-align: center;
+    }
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      color: #023e8a;
+      margin-bottom: 1rem;
+      line-height: 1.3;
+    }
+    .hero p {
+      font-size: 1.1rem;
+      color: #555;
+      margin-bottom: 2rem;
+    }
+    .hero-btns {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      background-color: #0077b6;
+      color: #fff;
+      padding: 0.8rem 2rem;
+      border-radius: 30px;
+      font-weight: bold;
+      box-shadow: 0 4px 6px rgba(0,119,182,0.2);
+    }
+    .btn-secondary {
+      background-color: #ffffff;
+      color: #0077b6;
+      border: 2px solid #0077b6;
+      padding: 0.8rem 2rem;
+      border-radius: 30px;
+      font-weight: bold;
+    }
+
+    /* --------------------------------------
+       共通セクションスタイル
+    -------------------------------------- */
+    section {
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      color: #023e8a;
+      margin-bottom: 2.5rem;
+      position: relative;
+    }
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 50px;
+      height: 3px;
+      background-color: #0077b6;
+      margin: 0.5rem auto 0;
+      border-radius: 2px;
+    }
+
+    /* --------------------------------------
+       特徴・強み
+    -------------------------------------- */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    .feature-card {
+      background: #ffffff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      border-top: 4px solid #0077b6;
+      text-align: center;
+    }
+    .feature-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .feature-card h3 {
+      margin-bottom: 0.8rem;
+      color: #023e8a;
+    }
+
+    /* --------------------------------------
+       診療案内
+    -------------------------------------- */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+    .service-card {
+      background-color: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 1.5rem;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    }
+    .service-card h3 {
+      color: #0077b6;
+      margin-bottom: 0.5rem;
+    }
+
+    /* --------------------------------------
+       オンライン予約フォーム
+    -------------------------------------- */
+    .reservation-container {
+      background: #ffffff;
+      padding: 2.5rem;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+      color: #444;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+    .btn-submit {
+      width: 100%;
+      background-color: #0077b6;
+      color: #fff;
+      border: none;
+      padding: 1rem;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .btn-submit:hover {
+      background-color: #005f92;
+    }
+
+    /* --------------------------------------
+       アクセス & 医院概要
+    -------------------------------------- */
+    .access-info {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      background: #f0f9ff;
+      padding: 2rem;
+      border-radius: 12px;
+    }
+    .info-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .info-table th, .info-table td {
+      padding: 0.8rem;
+      border-bottom: 1px solid #e0e0e0;
+      text-align: left;
+    }
+    .info-table th {
+      color: #0077b6;
+      width: 30%;
+    }
+
+    /* --------------------------------------
+       フッター
+    -------------------------------------- */
+    footer {
+      background-color: #023e8a;
+      color: #ffffff;
+      text-align: center;
+      padding: 2rem;
+      margin-top: 4rem;
+    }
+
+    /* レスポンシブ対応 */
+    @media (max-width: 768px) {
+      .header-container {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ヘッダー -->
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        🦷 さくら台歯科・矯正歯科
+      </div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#features">当院の特徴</a></li>
+          <li><a href="#services">診療案内</a></li>
+          <li><a href="#access">アクセス</a></li>
+          <li><a href="#reserve" class="btn-reserve">Web予約</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ヒーローエリア -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>痛みの少ない治療で<br>一生つきあえる健康な歯へ</h1>
+      <p>最新設備と丁寧なカウンセリングで、小さなお子様からご高齢の方まで安心して通える地域の歯科医院です。</p>
+      <div class="hero-btns">
+        <a href="#reserve" class="btn-primary">今すぐWeb予約</a>
+        <a href="#services" class="btn-secondary">診療内容を見る</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 特徴 -->
+  <section id="features">
+    <h2 class="section-title">当院の3つの強み</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">✨</div>
+        <h3>痛みに配慮した治療</h3>
+        <p>麻酔時の痛みを軽減する最新機器や技術を導入し、歯科治療が苦手な方でも安心して受診いただけます。</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🩺</div>
+        <h3>丁寧なカウンセリング</h3>
+        <p>治療内容や費用、期間について分かりやすく説明し、納得いただいた上で最適な治療を行います。</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🛡️</div>
+        <h3>徹底した感染症対策</h3>
+        <p>世界基準の滅菌器を導入し、診察に使用する器具は常に清潔で安全な状態を保っています。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 診療案内 -->
+  <section id="services">
+    <h2 class="section-title">診療内容</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <h3>一般歯科・虫歯治療</h3>
+        <p>可能な限り「削らない・抜かない」治療を心がけ、大切な自らの歯を残します。</p>
+      </div>
+      <div class="service-card">
+        <h3>予防歯科・クリーニング</h3>
+        <p>定期的なメンテナンスとPMTC（歯のプロ清掃）で、虫歯や歯周病を未然に防ぎます。</p>
+      </div>
+      <div class="service-card">
+        <h3>小児歯科</h3>
+        <p>お子様が歯医者を嫌いにならないよう、優しくペースを合わせた治療を行います。</p>
+      </div>
+      <div class="service-card">
+        <h3>矯正歯科（マウスピース）</h3>
+        <p>目立ちにくい透明なマウスピース矯正など、一人ひとりに合った矯正をご提案します。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- オンライン予約 -->
+  <section id="reserve">
+    <h2 class="section-title">Web診療予約</h2>
+    <div class="reservation-container">
+      <form id="reservationForm">
+        <div class="form-group">
+          <label for="name">お名前 *</label>
+          <input type="text" id="name" required placeholder="山田 太郎">
+        </div>
+        <div class="form-group">
+          <label for="phone">電話番号 *</label>
+          <input type="tel" id="phone" required placeholder="090-1234-5678">
+        </div>
+        <div class="form-group">
+          <label for="service">ご希望の診療内容 *</label>
+          <select id="service" required>
+            <option value="">選択してください</option>
+            <option value="虫歯治療・痛み">虫歯の治療・痛みの相談</option>
+            <option value="定期検診・クリーニング">定期検診・歯のクリーニング</option>
+            <option value="矯正相談">矯正歯科のご相談</option>
+            <option value="その他">その他</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="date">ご希望の日時 *</label>
+          <input type="date" id="date" required>
+        </div>
+        <div class="form-group">
+          <label for="message">ご要望・気になる症状など</label>
+          <textarea id="message" rows="4" placeholder="歯が痛む、詰め物が取れた など"></textarea>
+        </div>
+        <button type="submit" class="btn-submit">予約を確定する</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- アクセス・概要 -->
+  <section id="access">
+    <h2 class="section-title">医院概要・アクセス</h2>
+    <div class="access-info">
+      <div>
+        <table class="info-table">
+          <tr>
+            <th>医院名</th>
+            <td>さくら台歯科・矯正歯科</td>
+          </tr>
+          <tr>
+            <th>住所</th>
+            <td>〒100-0001 東京都千代田区1-1-1 さくらビル2F</td>
+          </tr>
+          <tr>
+            <th>電話番号</th>
+            <td>03-1234-5678</td>
+          </tr>
+          <tr>
+            <th>休診日</th>
+            <td>水曜・日曜・祝日</td>
+          </tr>
+        </table>
+      </div>
+      <div>
+        <table class="info-table">
+          <tr>
+            <th>診療時間</th>
+            <td>9:30 - 13:00 / 14:30 - 19:00<br><small>※土曜日は17:00まで</small></td>
+          </tr>
+          <tr>
+            <th>最寄り駅</th>
+            <td>〇〇駅 徒歩3分（駐車場完備）</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- フッター -->
+  <footer>
+    <p>&copy; Sakura Dental Clinic. All Rights Reserved.</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // 予約フォーム送信時の処理
+    document.getElementById('reservationForm').addEventListener('submit', function(e) {
+      e.preventDefault(); // 画面リロードを防ぐ
+      
+      const name = document.getElementById('name').value;
+      const date = document.getElementById('date').value;
+      
+      alert(name + ' 様\n\nご予約ありがとうございます。\n' + date + ' のご希望で受付いたしました。\n確定確認のため、担当者よりお電話をさせていただきます。');
+      
+      // フォームのクリア
+      this.reset();
+    });
+  </script>
+</body>
+</html>
